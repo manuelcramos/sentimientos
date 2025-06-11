@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #f3f2f0;
+  transition: background 0.8s;
+}
+ /* Estilo general del cuerpo: sin márgenes ni relleno,
+  fuente moderna, texto blanco, y transición suave del fondo */
+.contenedor {
+  max-width: 600px;
+  margin: 80px auto;
+  text-align: center;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+/* Contenedor principal centrado con fondo semi-transparente,
+ esquinas redondeadas y sombra */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+/* Estilo del título principal */
+select, button {
+  padding: 12px;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+}
+/* Estilos compartidos para el menú desplegable y el botón: tamaño,
+ margen, bordes redondeados, sin borde */
+button {
+  background-color: white;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+ /* Botón con fondo blanco, texto oscuro,
+  y efecto de transición al pasar el ratón */
+button:hover {
+  background-color: #fa0505;
+}
+/* Color de fondo más claro al pasar el cursor por encima del botón */
+#frase {
+  margin-top: 30px;
+  font-size: 1.3rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  min-height: 60px;
+}
+/* Área donde se muestra la frase motivadora: fondo claro y translúcido,
+ con algo de espacio y esquinas redondeadas */
+/* FONDOS SEGÚN EMOCIÓN */
+
+body.triste {
+  background: linear-gradient(to right, #434343, #000000);
+}
+/* Fondo oscuro y sobrio para emociones tristes */
+body.estresado {
+  background: linear-gradient(to right, #f12711, #f5af19);
+}
+/* Fondo con tonos intensos entre rojo y naranja para simbolizar estrés */
+body.feliz {
+  background: linear-gradient(to right, #56ab2f, #a8e063);
+}
+/* Colores vivos y verdes que representan alegría y frescura */
+body.cansado {
+  background: linear-gradient(to right, #614385, #516395);
+}
+/* Tonos púrpura y azul para un estado de cansancio o relajación */
+body.motivado {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+/* Azul brillante que transmite energía y motivación */
+body.duelo {
+  background: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
+}
+/* Combinacion de colores melancólicos y cálidos para representar duelo y consuelo */
+body.estudiar {
+  background: linear-gradient(to right, #f7971e, #ffd200);
+}
+/* Fondo naranja-amarillo, que transmite energía y concentración para estudiar */
+body.trabajo {
+    background: linear-gradient(to right, #f7971e, #ffd200); /* naranja optimista */
+    color: #3c2c00;
+  }
+/* Fondo para la parte del trabajo*/
+/* Fondo para la categoría "relaciones": tonos suaves y rosados, evocan calidez y afecto */
+body.relaciones { 
+  background: linear-gradient(to right, #ee9ca7, #ffdde1); 
+}
+
+/* Fondo para la categoría "deporte": tonos verdes y turquesa, simbolizan energía y salud */
+body.deporte { 
+  background: linear-gradient(to right, #11998e, #38ef7d); 
+}
+
+/* Fondo para la categoría "crecimiento": verde vibrante, representa desarrollo personal y esperanza */
+body.crecimiento_personal { 
+  background: linear-gradient(to right, #56ab2f, #a8e063); 
+}
+
+body.emociones {
+  background: linear-gradient(to right, #434343, #000000);
+}
+/* mezcla fuerte y cálida */
+body.hueso_ancho {
+  background: linear-gradient(to right, #f0c27b, #4b1248); 
+}
+/* oscuro y suave para tristeza */
+body.deprimida {
+  background: linear-gradient(to right, #434343, #000000); 
+}
+/* rosa melón suave a coral claro */
+body.deprimida{
+background: linear-gradient(to right, #ffafbd, #ffc3a0);  
+}
+/* violeta azulado a azul cielo intenso */
+body.hueso-ancho{
+  background: linear-gradient(to right, #6a11cb, #2575fc);  
+
+}
