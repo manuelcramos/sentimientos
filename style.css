@@ -1,12 +1,13 @@
+/* ===== ESTILO GENERAL ===== */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  color: #f3f2f0;
+  color: #f8e3ba;
   transition: background 0.8s;
 }
- /* Estilo general del cuerpo: sin márgenes ni relleno,
-  fuente moderna, texto blanco, y transición suave del fondo */
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
 .contenedor {
   max-width: 600px;
   margin: 80px auto;
@@ -16,13 +17,14 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
-/* Contenedor principal centrado con fondo semi-transparente,
- esquinas redondeadas y sombra */
+
+/* ===== TÍTULO ===== */
 h1 {
   font-size: 2rem;
   margin-bottom: 20px;
 }
-/* Estilo del título principal */
+
+/* ===== SELECT Y BOTONES ===== */
 select, button {
   padding: 12px;
   font-size: 16px;
@@ -30,21 +32,20 @@ select, button {
   border-radius: 10px;
   border: none;
 }
-/* Estilos compartidos para el menú desplegable y el botón: tamaño,
- margen, bordes redondeados, sin borde */
+
 button {
   background-color: white;
-  color: #333;
+  color: #525050;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s;
 }
- /* Botón con fondo blanco, texto oscuro,
-  y efecto de transición al pasar el ratón */
+
 button:hover {
   background-color: #fa0505;
 }
-/* Color de fondo más claro al pasar el cursor por encima del botón */
+
+/* ===== CONTENEDOR DE FRASE ===== */
 #frase {
   margin-top: 30px;
   font-size: 1.3rem;
@@ -53,75 +54,93 @@ button:hover {
   border-radius: 10px;
   min-height: 60px;
 }
-/* Área donde se muestra la frase motivadora: fondo claro y translúcido,
- con algo de espacio y esquinas redondeadas */
-/* FONDOS SEGÚN EMOCIÓN */
+
+/* ===== EMOCIONES (usadas con <select id="estado">) ===== */
 
 body.triste {
-  background: linear-gradient(to right, #434343, #000000);
+  /* Fondo azul profundo para calma y reflexión */
+  /* Color: Degradado de #4b6cb7 a #182848 */
+  background: linear-gradient(to right, #4b6cb7, #182848);
 }
-/* Fondo oscuro y sobrio para emociones tristes */
+
 body.estresado {
-  background: linear-gradient(to right, #f12711, #f5af19);
+  /* Fondo rojo suave para soltar tensión y energía */
+  /* Color: Degradado de #ff416c a #ff4b2b */
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
 }
-/* Fondo con tonos intensos entre rojo y naranja para simbolizar estrés */
+
 body.feliz {
-  background: linear-gradient(to right, #56ab2f, #a8e063);
+  /* Fondo amarillo claro y celeste para alegría y frescura */
+  /* Color: Degradado de #fddb92 a #d1fdff */
+  background: linear-gradient(to right, #fddb92, #d1fdff);
 }
-/* Colores vivos y verdes que representan alegría y frescura */
+
 body.cansado {
-  background: linear-gradient(to right, #614385, #516395);
+  /* Fondo morado suave para relajación y descanso */
+  /* Color: Degradado de #667eea a #764ba2 */
+  background: linear-gradient(to right, #667eea, #764ba2);
 }
-/* Tonos púrpura y azul para un estado de cansancio o relajación */
+
 body.motivado {
-  background: linear-gradient(to right, #00c6ff, #0072ff);
+  /* Fondo verde azulado para energía positiva y foco */
+  /* Color: Degradado de #43cea2 a #185a9d */
+  background: linear-gradient(to right, #43cea2, #185a9d);
 }
-/* Azul brillante que transmite energía y motivación */
+
+/* ===== CATEGORÍAS (usadas con <select id="categoria">) ===== */
+
 body.duelo {
-  background: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
+  /* Fondo azul grisáceo a lavanda suave para recogimiento con calma y esperanza */
+  /* Color: Degradado de #8a9ba8 a #c1bad6 */
+  background: linear-gradient(to right, #8a9ba8, #c1bad6);
 }
-/* Combinacion de colores melancólicos y cálidos para representar duelo y consuelo */
-body.estudiar {
+
+
+body.estudios {
+  /* Fondo azul vibrante para concentración y claridad */
+  /* Color: Degradado de #6a11cb a #2575fc */
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+body.trabajo {
+  /* Fondo rosa suave para energía amable y optimismo */
+  /* Color: Degradado de #ffafbd a #ffc3a0 */
+  background: linear-gradient(to right, #ffafbd, #ffc3a0);
+  color: #3c2c00; /* Color de texto oscuro para buen contraste */
+}
+
+body.relaciones {
+  /* Fondo naranja luminoso para calidez y conexión */
+  /* Color: Degradado de #f7971e a #ffd200 */
   background: linear-gradient(to right, #f7971e, #ffd200);
 }
-/* Fondo naranja-amarillo, que transmite energía y concentración para estudiar */
-body.trabajo {
-    background: linear-gradient(to right, #f7971e, #ffd200); /* naranja optimista */
-    color: #3c2c00;
-  }
-/* Fondo para la parte del trabajo*/
-/* Fondo para la categoría "relaciones": tonos suaves y rosados, evocan calidez y afecto */
-body.relaciones { 
-  background: linear-gradient(to right, #ee9ca7, #ffdde1); 
+
+body.deporte {
+  /* Fondo verde energético para vitalidad y salud */
+  /* Color: Degradado de #11998e a #38ef7d */
+  background: linear-gradient(to right, #11998e, #38ef7d);
 }
 
-/* Fondo para la categoría "deporte": tonos verdes y turquesa, simbolizan energía y salud */
-body.deporte { 
-  background: linear-gradient(to right, #11998e, #38ef7d); 
-}
-
-/* Fondo para la categoría "crecimiento": verde vibrante, representa desarrollo personal y esperanza */
-body.crecimiento_personal { 
-  background: linear-gradient(to right, #56ab2f, #a8e063); 
+body.crecimiento_personal {
+  /* Fondo verde claro para renovación y esperanza */
+  /* Color: Degradado de #56ab2f a #a8e063 */
+  background: linear-gradient(to right, #56ab2f, #a8e063);
 }
 
 body.emociones {
-  background: linear-gradient(to right, #434343, #000000);
+  /* Fondo melocotón cálido para balance emocional */
+  /* Color: Degradado de #f6d365 a #fda085 */
+  background: linear-gradient(to right, #f6d365, #fda085);
 }
-/* mezcla fuerte y cálida */
-body.hueso_ancho {
-  background: linear-gradient(to right, #f0c27b, #4b1248); 
-}
-/* oscuro y suave para tristeza */
-body.deprimida {
-  background: linear-gradient(to right, #434343, #000000); 
-}
-/* rosa melón suave a coral claro */
-body.deprimida{
-background: linear-gradient(to right, #ffafbd, #ffc3a0);  
-}
-/* violeta azulado a azul cielo intenso */
-body.hueso-ancho{
-  background: linear-gradient(to right, #6a11cb, #2575fc);  
 
+body.hueso_ancho {
+  /* Fondo dorado profundo para fuerza y estabilidad */
+  /* Color: Degradado de #f0c27b a #4b1248 */
+  background: linear-gradient(to right, #f0c27b, #4b1248);
+}
+
+body.deprimido {
+  /* Fondo azul claro para calma y esperanza */
+  /* Color: Degradado de #89f7fe a #66a6ff */
+  background: linear-gradient(to right, #89f7fe, #66a6ff);
 }
