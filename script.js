@@ -448,52 +448,61 @@ const frases = {
   ]
 };
 
+// Variables globales para guardar la última categoría y la última frase mostrada
 let ultimaCategoria = "";
 let ultimaFrase = "";
 
+// Función que muestra una frase según la categoría seleccionada
 function mostrarFraseCategoria() {
-  const select = document.getElementById("categoria");
-  const categoria = select.value;
-  const fraseContenedor = document.getElementById("frase");
+  const select = document.getElementById("categoria"); // Obtiene el elemento <select> de categorías
+  const categoria = select.value; // Guarda el valor seleccionado (la categoría elegida)
+  const fraseContenedor = document.getElementById("frase"); // Contenedor donde se mostrará la frase
 
+  // Verifica si no hay categoría seleccionada, o si no hay frases para esa categoría
   if (!categoria || !frases[categoria] || frases[categoria].length === 0) {
     fraseContenedor.textContent = "Por favor, selecciona una categoría válida.";
-    return;
+    return; // Sale de la función si no hay categoría válida
   }
 
-  const lista = frases[categoria];
-  const nuevaFrase = lista[Math.floor(Math.random() * lista.length)];
+  const lista = frases[categoria]; // Obtiene la lista de frases de la categoría
+  const nuevaFrase = lista[Math.floor(Math.random() * lista.length)]; // Escoge una frase aleatoria
 
-  fraseContenedor.textContent = nuevaFrase;
-  ultimaCategoria = categoria;
-  ultimaFrase = nuevaFrase;
+  fraseContenedor.textContent = nuevaFrase; // Muestra la frase en el contenedor
+  ultimaCategoria = categoria; // Guarda la última categoría usada
+  ultimaFrase = nuevaFrase; // Guarda la última frase mostrada
 
-  document.body.className = "";
-  document.body.classList.add(categoria);
+  document.body.className = ""; // Limpia cualquier clase previa del body
+  document.body.classList.add(categoria); // Agrega una clase al body con el nombre de la categoría (para cambiar el fondo, por ejemplo)
 
-  document.getElementById("btn-otra-cat").style.display = "inline-block";
+  document.getElementById("btn-otra-cat").style.display = "inline-block"; // Muestra el botón para generar otra frase
 }
 
+// Función que muestra otra frase distinta de la misma categoría
 function otraFraseCategoria() {
+  // Si no hay categoría previa guardada, no hace nada
   if (!ultimaCategoria || !frases[ultimaCategoria]) return;
 
   let nuevaFrase;
   do {
+    // Genera una nueva frase aleatoria
     nuevaFrase = frases[ultimaCategoria][Math.floor(Math.random() * frases[ultimaCategoria].length)];
-  } while (nuevaFrase === ultimaFrase && frases[ultimaCategoria].length > 1);
+  } while (nuevaFrase === ultimaFrase && frases[ultimaCategoria].length > 1); 
+  // Repite si la frase es igual a la anterior (si hay más de una frase en la categoría)
 
-  document.getElementById("frase").textContent = nuevaFrase;
-  ultimaFrase = nuevaFrase;
+  document.getElementById("frase").textContent = nuevaFrase; // Muestra la nueva frase
+  ultimaFrase = nuevaFrase; // Actualiza la última frase
 }
 
+// Espera a que todo el contenido del DOM esté cargado antes de añadir los eventos
 document.addEventListener("DOMContentLoaded", () => {
-  const btnFrase = document.getElementById("btn-frase");
-  const btnOtra = document.getElementById("btn-otra-cat");
+  const btnFrase = document.getElementById("btn-frase"); // Botón para mostrar la primera frase
+  const btnOtra = document.getElementById("btn-otra-cat"); // Botón para mostrar otra frase
 
+  // Verifica si los botones existen y agrega los eventos
   if (btnFrase && btnOtra) {
     btnFrase.addEventListener("click", mostrarFraseCategoria);
     btnOtra.addEventListener("click", otraFraseCategoria);
   } else {
-    console.error("No se encontraron los botones necesarios.");
+    console.error("No se encontraron los botones necesarios."); // Muestra un error si los botones no existen
   }
 });
